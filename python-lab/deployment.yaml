@@ -3,16 +3,16 @@ kind: Deployment
 metadata:
   name: juan-node
   labels:
-    app: juanservice
+    app: servicepython
 spec:
   replicas: 3  # Cambia según la cantidad de réplicas que necesites
   selector:
     matchLabels:
-      app: juanservice
+      app: servicepython
   template:
     metadata:
       labels:
-        app: juanservice
+        app: servicepython
     spec:
       serviceAccountName: default
       terminationGracePeriodSeconds: 30  # Ajustado a 30 segundos, dependiendo de las necesidades de tu aplicación
@@ -22,7 +22,7 @@ spec:
         fsGroup: 1000
       containers:
       - name: server
-        image: "anarkigotic/mi-aplicacion-juan:v6"
+        image: "anarkigotic/mi-aplicacion-python:v0"
         ports:
         - containerPort: 5000
         securityContext:
