@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: juan-contenedor
-        image: mi-imagen-python:latest # Reemplaza con el nombre de tu imagen Docker y su etiqueta
+        image: mi-imagen-python # Reemplaza con el nombre de tu imagen Docker y su etiqueta
         ports:
         - containerPort: 5000 # Cambia el puerto según las necesidades de tu aplicación
 
