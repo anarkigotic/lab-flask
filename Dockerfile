@@ -2,22 +2,20 @@
 FROM node:14
 
 # Establecer el directorio de trabajo en el contenedor
-WORKDIR /usr/src/app
+WORKDIR /app
 
 # Copiar el archivo package.json y package-lock.json para instalar las dependencias
-COPY package*.json ./
+COPY . .
 
 # Instalar las dependencias
 RUN npm install
 
-# Copiar el resto de la aplicación
-COPY . .
 
 # Exponer el puerto en el que la aplicación Express se ejecutará
 EXPOSE 5000
 
 # Comando para iniciar la aplicación cuando se ejecute el contenedor
-CMD ["node", "app.js"]
+CMD ["node", "main.js"]
 # FROM python:3.12-slim
 
 # # Trabajar en un directorio específico (opcional)
