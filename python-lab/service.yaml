@@ -1,10 +1,10 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: juan-node-service
+  name: python-service
 spec:
   selector:
-    app: juanservice  # Selecciona los pods con la etiqueta "app: juanservice"
+    app: servicepython  # Selecciona los pods con la etiqueta "app: juanservice"
   ports:
     - protocol: TCP
       port: 5000       # Puerto del servicio
