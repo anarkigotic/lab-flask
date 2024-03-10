@@ -1,0 +1,34 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: juan-node
+  labels:
+    app: juanservice
+spec:
+  replicas: 3  # Cambia según la cantidad de réplicas que necesites
+  selector:
+    matchLabels:
+      app: juanservice
+  template:
+    metadata:
+      labels:
+        app: juanservice
+    spec:
+      serviceAccountName: default
+      terminationGracePeriodSeconds: 30  # Ajustado a 30 segundos, dependiendo de las necesidades de tu aplicación
+      securityContext:
+        runAsNonRoot: true
+        runAsUser: 1000
+        fsGroup: 1000
+      containers:
+      - name: server
+        image: "anarkigotic/mi-aplicacion-juan:v6"
+        ports:
+        - containerPort: 5000
+        securityContext:
+          readOnlyRootFilesystem: true
+          allowPrivilegeEscalation: false
+          capabilities:
+            drop:
+              - ALL
+          privileged: false
