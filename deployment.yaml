@@ -5,6 +5,7 @@ metadata:
   labels:
     app: juanservice
 spec:
+  replicas: 3  # Cambia según la cantidad de réplicas que necesites
   selector:
     matchLabels:
       app: juanservice
@@ -14,21 +15,20 @@ spec:
         app: juanservice
     spec:
       serviceAccountName: default
-      terminationGracePeriodSeconds: 5
+      terminationGracePeriodSeconds: 30  # Ajustado a 30 segundos, dependiendo de las necesidades de tu aplicación
       securityContext:
-        fsGroup: 1000
-        runAsGroup: 1000
         runAsNonRoot: true
         runAsUser: 1000
+        fsGroup: 1000
       containers:
       - name: server
+        image: "anarkigotic/mi-aplicacion-juan:v5"
+        ports:
+        - containerPort: 5000
         securityContext:
+          readOnlyRootFilesystem: true
           allowPrivilegeEscalation: false
           capabilities:
             drop:
               - ALL
           privileged: false
-          readOnlyRootFilesystem: true
-        image: "anarkigotic/mi-aplicacion-juan:v5"
-        ports:
-        - containerPort: 7070
