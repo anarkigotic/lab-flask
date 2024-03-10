@@ -1,19 +1,20 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: mi-aplicacion-flask
+  name: ejemplo-deployment
 spec:
-  replicas: 1
+  replicas: 3  # Número de réplicas del pod
   selector:
     matchLabels:
-      app: mi-aplicacion-flask
+      app: mi-aplicacion  # Selector para los pods pertenecientes a este deployment
   template:
     metadata:
       labels:
-        app: mi-aplicacion-flask
+        app: mi-aplicacion  # Etiqueta para los pods creados por este deployment
     spec:
       containers:
-      - name: mi-aplicacion-flask
-        image: anarkigotic/mi-aplicacion-flask
+      - name: mi-contenedor  # Nombre del contenedor
+        image: nginx:latest  # Imagen del contenedor
         ports:
-        - containerPort: 5000
+        - containerPort: 80  # Puerto expuesto por el contenedor
+
