@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
       - name: "juan-contenedor"
-        image: "anarkigotic/mi-aplicacion-flask:latest"
+        image: "anarkigotic/mi-aplicacion-flask:v1"
         ports:
         - containerPort: 5000 # Cambia el puerto según las necesidades de tu aplicación
 
