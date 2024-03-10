@@ -1,20 +1,23 @@
-apiVersion: apps/v1
-kind: Deployment
+apiVersion: "apps/v1"
+kind: "Deployment"
 metadata:
-  name: juan-deployment
+  name: "juan-deployment"
+  namespace: "default"
+  labels:
+    app: "python-juan"
 spec:
   replicas: 3 # Cambia según la cantidad de réplicas que desees
   selector:
     matchLabels:
-      app: juan-app
+      app: "juan-app"
   template:
     metadata:
       labels:
-        app: juan-app
+        app: "juan-app"
     spec:
       containers:
-      - name: juan-contenedor
-        image: anarkigotic/mi-aplicacion-flask:latest 
+      - name: "juan-contenedor"
+        image: "anarkigotic/mi-aplicacion-flask:v1"
         ports:
         - containerPort: 5000 # Cambia el puerto según las necesidades de tu aplicación
 
