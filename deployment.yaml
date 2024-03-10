@@ -1,20 +1,20 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: ejemplo-deployment
+  name: juan-deployment
 spec:
-  replicas: 3  # Número de réplicas del pod
+  replicas: 3 # Cambia según la cantidad de réplicas que desees
   selector:
     matchLabels:
-      app: mi-aplicacion  # Selector para los pods pertenecientes a este deployment
+      app: juan-app
   template:
     metadata:
       labels:
-        app: mi-aplicacion  # Etiqueta para los pods creados por este deployment
+        app: juan-app
     spec:
       containers:
-      - name: mi-contenedor  # Nombre del contenedor
-        image: nginx:latest  # Imagen del contenedor
+      - name: juan-contenedor
+        image: mi-imagen-python:latest # Reemplaza con el nombre de tu imagen Docker y su etiqueta
         ports:
-        - containerPort: 80  # Puerto expuesto por el contenedor
+        - containerPort: 5000 # Cambia el puerto según las necesidades de tu aplicación
 
