@@ -1,22 +1,22 @@
 apiVersion: "apps/v1"
 kind: "Deployment"
 metadata:
-  name: "juan-deployment"
+  name: "juan-deployment-5"
   namespace: "default"
   labels:
-    app: "python-juan"
+    app: "node-juan-5"
 spec:
   replicas: 3 # Cambia según la cantidad de réplicas que desees
   selector:
     matchLabels:
-      app: "juan-app"
+      app: "node-juan-5"
   template:
     metadata:
       labels:
-        app: "juan-app"
+        app: "node-juan-5"
     spec:
       containers:
-      - name: "juan-contenedor"
+      - name: "mi-aplicacion-juan"
         image: "anarkigotic/mi-aplicacion-juan:v5"
         ports:
         - containerPort: 5000 # Cambia el puerto según las necesidades de tu aplicación
