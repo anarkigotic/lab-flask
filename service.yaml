@@ -7,6 +7,6 @@ spec:
     app: mi-aplicacion  # Selector para encontrar los pods del servicio
   ports:
     - protocol: TCP
-      port: 80  # Puerto expuesto por el servicio
-      targetPort: 80  # Puerto al que redirige el servicio en los pods
+      port: 5000  # Puerto expuesto por el servicio
+      targetPort: 5000  # Puerto al que redirige el servicio en los pods
   type: LoadBalancer  # Tipo de servicio, en este caso LoadBalancer
