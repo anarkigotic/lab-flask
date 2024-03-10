@@ -22,7 +22,7 @@ spec:
         fsGroup: 1000
       containers:
       - name: server
-        image: "anarkigotic/mi-aplicacion-juan:v5"
+        image: "anarkigotic/mi-aplicacion-juan:v6"
         ports:
         - containerPort: 5000
         securityContext:
