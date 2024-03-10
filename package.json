@@ -1,0 +1,19 @@
+{
+    "name": "mi-aplicacion",
+    "version": "1.0.0",
+    "description": "Una aplicación Node.js con Express",
+    "main": "app.js",
+    "scripts": {
+      "start": "node app.js"
+    },
+    "keywords": [
+      "node",
+      "express"
+    ],
+    "author": "Tu Nombre",
+    "license": "MIT",
+    "dependencies": {
+      "express": "^4.17.1"
+    }
+  }
+  

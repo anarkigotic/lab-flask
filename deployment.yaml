@@ -1,71 +1,23 @@
----
 apiVersion: "apps/v1"
 kind: "Deployment"
 metadata:
-  name: "nginx-1"
+  name: "juan-deployment"
   namespace: "default"
   labels:
-    app: "nginx-1"
+    app: "python-juan"
 spec:
-  replicas: 3
+  replicas: 3 # Cambia según la cantidad de réplicas que desees
   selector:
     matchLabels:
-      app: "nginx-1"
+      app: "juan-app"
   template:
     metadata:
       labels:
-        app: "nginx-1"
+        app: "juan-app"
     spec:
       containers:
-      - name: "mi-aplicacion-juan-1"
-        image: "anarkigotic/mi-aplicacion-juan:v0"
+      - name: "juan-contenedor"
+        image: "anarkigotic/mi-aplicacion-juan:v3"
         ports:
-         - containerPort: 5000 # Cambia el puerto según las necesidades de tu aplicación
-
----
-apiVersion: "autoscaling/v2"
-kind: "HorizontalPodAutoscaler"
-metadata:
-  name: "nginx-1-hpa-ojs1"
-  namespace: "default"
-  labels:
-    app: "nginx-1"
-spec:
-  scaleTargetRef:
-    kind: "Deployment"
-    name: "nginx-1"
-    apiVersion: "apps/v1"
-  minReplicas: 1
-  maxReplicas: 5
-  metrics:
-  - type: "Resource"
-    resource:
-      name: "cpu"
-      target:
-        type: "Utilization"
-        averageUtilization: 80
-
-# apiVersion: "apps/v1"
-# kind: "Deployment"
-# metadata:
-#   name: "juan-deployment"
-#   namespace: "default"
-#   labels:
-#     app: "python-juan"
-# spec:
-#   replicas: 3 # Cambia según la cantidad de réplicas que desees
-#   selector:
-#     matchLabels:
-#       app: "juan-app"
-#   template:
-#     metadata:
-#       labels:
-#         app: "juan-app"
-#     spec:
-#       containers:
-#       - name: "juan-contenedor"
-#         image: "anarkigotic/mi-aplicacion-juan:latest"
-#                 anarkigotic/mi-aplicacion-juan:v0
-#         ports:
-#         - containerPort: 5000 # Cambia el puerto según las necesidades de tu aplicación
+        - containerPort: 5000 # Cambia el puerto según las necesidades de tu aplicación
 
