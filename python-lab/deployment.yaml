@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: juan-node
+  name: pythin-app
   labels:
     app: servicepython
 spec:
