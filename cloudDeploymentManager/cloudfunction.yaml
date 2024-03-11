@@ -1,0 +1,11 @@
+resources:
+- name: my-cloud-function
+  type: gcp-types/cloudfunctions-v1:projects.locations.functions
+  properties:
+    parent: projects/test-docker-416523/locations/us-east1
+    function:
+      name: my-cloud-function
+      sourceArchiveUrl:  gs://jerez-2024/PATH/mi-proyecto.zip
+      entryPoint: helloWorld
+      runtime: nodejs14
+      httpsTrigger: {}
