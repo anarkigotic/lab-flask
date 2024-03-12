@@ -7,5 +7,4 @@ resources:
     sourceArchiveUrl: gs://jerez-2024/mi-proyecto.zip
     entryPoint: helloWorld
     runtime: nodejs14
-    httpsTrigger:
-      allowUnauthenticated: true
+    
