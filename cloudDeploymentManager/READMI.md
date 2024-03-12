@@ -18,3 +18,4 @@ gcloud services enable cloudbuild.googleapis.com --project=test-docker-416523
 
 
 gcloud functions deploy my-cloud-function --trigger-http --runtime=nodejs14 --set-env-vars ENABLE_HTTP_LOGGING=true
+
