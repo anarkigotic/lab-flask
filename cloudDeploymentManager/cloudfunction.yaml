@@ -1,5 +1,5 @@
 resources:
-- name: my-cloud-function
+- name: my-cloud-function-two
   type: gcp-types/cloudfunctions-v1:projects.locations.functions
   properties:
     parent: projects/test-docker-416523/locations/us-east1
