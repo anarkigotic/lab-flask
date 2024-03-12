@@ -1,9 +1,9 @@
 resources:
-- name: my-cloud-function-two
+- name: mycloudfunctiontwo
   type: gcp-types/cloudfunctions-v1:projects.locations.functions
   properties:
     parent: projects/test-docker-416523/locations/us-east1
-    function: my-cloud-function-two
+    function: mycloudfunctiontwo
     sourceArchiveUrl: gs://jerez-2024/mi-proyecto.zip
     entryPoint: helloWorld
     runtime: nodejs14
